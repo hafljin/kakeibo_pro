@@ -1,17 +1,20 @@
 package com.example.kakeibopro
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
-
+// Home画面
 class HomeFragment : Fragment() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -23,7 +26,7 @@ class HomeFragment : Fragment() {
         val dayFormat = SimpleDateFormat("E", Locale.getDefault())
         val dateFormat = SimpleDateFormat("dd", Locale.getDefault())
         val dateContainer = view.findViewById<LinearLayout>(R.id.dateContainer)
-
+        // Scrollview領域を動的にするために生成
         for(i in 0..20) {
             val verticalLayout = LinearLayout(requireContext())
             verticalLayout.orientation = LinearLayout.VERTICAL
@@ -44,6 +47,7 @@ class HomeFragment : Fragment() {
 
             calender.add(Calendar.DAY_OF_MONTH, 1)
         }
+
         return view
     }
 }

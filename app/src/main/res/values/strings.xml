@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Month 20XX</string>
     <string name="total_expense">Total Expense</string>
-    <string name="total_expense_price_text">¥10000</string>">
+    <string name="total_expense_price_text">¥10,000</string>">
 </resources>
