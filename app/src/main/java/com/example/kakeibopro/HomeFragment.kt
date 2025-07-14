@@ -48,6 +48,18 @@ class HomeFragment : Fragment() {
             calender.add(Calendar.DAY_OF_MONTH, 1)
         }
 
+        val expenseList = listOf(
+            Expense("食費", "ランチ", 800, "2025/10/01"),
+            Expense("交通費", "電車代", 200, "2025/10/02"),
+            Expense("娯楽費", "映画", 1500, "2025/10/03"),
+            Expense("光熱費", "電気代", 3000, "2025/10/04"),
+            Expense("通信費", "携帯代", 5000, "2025/10/05")
+        )
+
+        val adapter = ExpenseAdapter(requireContext(), expenseList)
+        val expenseListView = view.findViewById<android.widget.ListView>(R.id.expenseListView)
+        expenseListView.adapter = adapter
+
         return view
     }
 }
